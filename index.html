@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tips Para Todo Tipo de Videojuegos</title>
+
+<!-- FUENTE PIXEL ART -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+    body {
+ margin: 0;
+   font-family: "Press Start 2P", cursive;
+   background: linear-gradient(135deg, #ff6bcb, #7b5bff, #00eaff);
+   background-size: 400% 400%;
+   animation: fondo 12s ease infinite;
+   color: #fff;
+   transition: 0.3s;
+ }
+ @keyframes fondo {
+   0% {background-position: 0% 50%;}
+   50% {background-position: 100% 50%;}
+   100% {background-position: 0% 50%;}
+ }
+ /* MENU DE INICIO */
+ #startMenu {
+   position: fixed;
+   top: 0; left: 0;
+   width: 100%; height: 100%;
+   background: rgba(0,0,0,0.85);
+   backdrop-filter: blur(6px);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   z-index: 9999;
+ }
+ #startMenu h1 {
+   font-size: 32px;
+   margin-bottom: 50px;
+   color: #ffeb3b;
+   text-shadow: 0 0 8px #ffe600;
+ }
+ #startBtn {
+   padding: 18px 35px;
+   font-size: 18px;
+   background: #00ffcc;
+   border: none;
+   cursor: pointer;
+   border-radius: 10px;
+   box-shadow: 0 0 12px #00ffcc;
+ }
+ #startBtn:hover {
+   background: #ffffff;
+   box-shadow: 0 0 20px #fff;
+ }
+ header {
+   padding: 25px;
+   text-align: center;
+   background: rgba(0, 0, 0, 0.45);
+   backdrop-filter: blur(6px);
+ }
+ nav {
+   display: flex;
+   gap: 15px;
+   padding: 12px;
+   justify-content: center;
+   background: rgba(0,0,0,0.3);
+   backdrop-filter: blur(5px);
+ }
+ nav a {
+   color: #fff;
+   text-decoration: none;
+ }
+ nav a:hover {
+   color: #ffeb3b;
+   text-shadow: 0 0 8px #ffeb3b;
+ }
+ main {max-width: 900px; margin: auto; padding: 20px;}
+ h2 {color: #ffeb3b; text-shadow: 0px 0px 6px #ffe600;}
+ .game-card {
+   background: rgba(0,0,0,0.4);
+   padding: 18px;
+   border-radius: 16px;
+   margin-bottom: 25px;
+   box-shadow: 0 0 12px rgba(255,255,255,0.3);
+ }
+ .game-image {
+   width: 100%; border-radius: 14px; cursor: pointer;
+   transition: 0.3s;
+ }
+ .game-image:hover {transform: scale(1.05); box-shadow: 0 0 18px #fff;}
+ .tip {background: rgba(255,255,255,0.15); padding: 12px; border-radius: 10px; margin: 12px 0; cursor: pointer; transition: 0.3s;}
+ .tip:hover {background: rgba(255,255,255,0.3); transform: scale(1.02);}
+ .tip-content {display: none; padding-top: 6px; color: #fffb;}
+ .tip-img {width: 100%; border-radius: 10px; margin-top: 10px; display: none;}
+ footer {margin-top: 35px; padding: 12px; text-align: center; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px);}
+</style>
+</head>
+
+<body>
+<!-- Introducción del sitio -->
+<h1>Bienvenido a GamerZone</h1>
+<p>Este sitio está diseñado para brindarte tips, guías y recursos para mejorar en todo tipo de videojuegos, desde acción hasta terror. Nuestro propósito es ayudarte a dominar tus juegos favoritos con información clara, útil y actualizada.</p>
+</section>
+
+
+<!-- Quiénes Somos -->
+<section id="quienesSomos" class="info-section">
+<h2>Quiénes Somos</h2>
+<p>Somos <strong>GamerZone Studios</strong>, una empresa ficticia dedicada a proporcionar herramientas, consejos y recursos para jugadores de todos los niveles. Nuestra misión es crear una comunidad informada donde los gamers encuentren apoyo y contenido de calidad para mejorar sus habilidades.</p>
+</section>
+
+
+<!-- Nuestros Servicios -->
+<section id="servicios" class="info-section">
+<h2>Nuestros Servicios</h2>
+<ul>
+<li><strong>Guías Detalladas:</strong> Explicaciones paso a paso para dominar diferentes géneros de videojuegos.</li>
+<li><strong>Tips Personalizados:</strong> Consejos adaptados al estilo de juego del usuario.</li>
+<li><strong>Biblioteca de Sonidos:</strong> Efectos de audio originales asociados a los juegos cuando interactúas con imágenes.</li>
+<li><strong>Actualizaciones Constantes:</strong> Contenido fresco basado en las tendencias actuales del mundo gamer.</li>
+</ul>
+</section>
+<!-- MENU DE INICIO -->
+<div id="startMenu">
+   <h1>Bienvenido a la Guía de Videojuegos</h1>
+   <button id="startBtn">INICIAR</button>
+</div>
+<nav>
+    <a href="#accion">Acción</a>
+    <a href="#aventura">Aventura</a>
+    <a href="#rpg">RPG</a>
+    <a href="#shooter">Shooter</a>
+    <a href="#carreras">Carreras</a>
+    <a href="#plataformas">Plataformeros</a>
+    <a href="#terror">Terror</a>
+</nav>
+
+<main>
+
+<!-- ACCIÓN -->
+<section id="accion">
+    <h2>Acción – METAL SLUG</h2>
+    <div class="game-card">
+        <img src="68881abc1826107137ea58e1caf33a46.jpg" class="game-image" onclick="playSound('ok-metal-slug-sound.mp3')">
+
+        <div class="tip" onclick="toggleTip(this)">Tip 1: Aprende el ritmo del juego
+            <div class="tip-content">Metal Slug recompensa la memoria muscular. Observa cuándo aparecen oleadas y domina el timing.</div>
+            <img class="tip-img" src="Metal_Slug.png">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 2: Mantente en movimiento
+            <div class="tip-content">Nunca te quedes quieto o serás blanco fácil de proyectiles enemigos.</div>
+            <img class="tip-img" src="16413431-metal-slug-super-vehicle-001-arcade-use-big-rock-to-smash.png">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 3: Aprovecha vehículos
+            <div class="tip-content">Usa tanques y máquinas siempre que puedas; aumentan ataque y supervivencia.</div>
+            <img class="tip-img" src="16413506-metal-slug-super-vehicle-001-arcade-tank-duel.png">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 4: Conoce patrones de jefes
+            <div class="tip-content">Cada boss tiene ciclos repetitivos. Domínalos para no desperdiciar vidas.</div>
+            <img class="tip-img" src="boss meal slug.png">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 5: Rescata prisioneros
+            <div class="tip-content">Casi siempre otorgan armas fuertes o puntos extra.</div>
+            <img class="tip-img" src="prisioneros.png">
+        </div>
+    </div>
+</section>
+
+<!-- AVENTURA -->
+<section id="aventura">
+    <h2>Aventura – THE LEGEND OF ZELDA</h2>
+    <div class="game-card">
+    <img src="toz.jpg" class="game-image" onclick="playSound('08 Flute.mp3')">
+
+        <div class="tip" onclick="toggleTip(this)">Tip 1: Examina todo el mapa
+            <div class="tip-content">Muchos secretos están escondidos detrás de paredes, agua o arbustos sospechosos.</div>
+            <img class="tip-img" src="secreto.png">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 2: Habla siempre con NPCs
+            <div class="tip-content">Muchísimas pistas clave solo se revelan conversando.</div>
+            <img class="tip-img" src="npc.jpg">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 3: Administra bombas y flechas
+            <div class="tip-content">Son recursos limitados, no los uses sin estrategia.</div>
+            <img class="tip-img" src="inventory.jpg">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 4: Consigue upgrades antes de jefes
+            <div class="tip-content">Vida extra y mejores armas facilitan los combates más difíciles.</div>
+            <img class="tip-img" src="boat.png">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 5: Observa patrones de monstruos
+            <div class="tip-content">Todos los enemigos tienen puntos débiles y patrones repetidos.</div>
+            <img class="tip-img" src="stalfos.png">
+        </div>
+    </div>
+</section>
+
+<!-- RPG -->
+<section id="rpg">
+    <h2>RPG – FINAL FANTASY</h2>
+    <div class="game-card">
+        <img src="Portada_FFI-II_Famicom.webp" class="game-image" onclick="playSound('Sound Effect (2).wav')">
+
+        <div class="tip" onclick="toggleTip(this)">Tip 1: Diversifica tu equipo
+            <div class="tip-content">Tanque, sanador y mago siempre son la base fundamental.</div>
+            <img class="tip-img" src="tema ff.jpg">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 2: Guarda objetos raros
+            <div class="tip-content">Los ítems de alto nivel funcionan mejor contra jefes.</div>
+            <img class="tip-img" src="sanctuary.jpg">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 3: Sube niveles inteligentemente
+            <div class="tip-content">Farmea antes de zonas críticas para evitar estancarte.</div>
+            <img class="tip-img" src="level.jpg">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 4: Explora ciudades al 100%
+            <div class="tip-content">Tiendas ocultas ofrecen armas exclusivas.</div>
+            <img class="tip-img" src="town ff.jpg">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 5: Analiza atributos de enemigos
+            <div class="tip-content">Muchos tienen debilidades elementales clave.</div>
+            <img class="tip-img" src="enemies.jpg">
+        </div>
+    </div>
+</section>
+
+<!-- SHOOTER -->
+<section id="shooter">
+    <h2>Shooter – DOOM</h2>
+    <div class="game-card">
+        <img src="s-l1600.webp" class="game-image" onclick="playSound('generic demon activity.wav')">
+
+        <div class="tip" onclick="toggleTip(this)">Tip 1: Mantente en movimiento
+            <div class="tip-content">Strafear es esencial para evitar daño masivo.</div>
+            <img class="tip-img" src="chainsaw demon massacre.png">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 2: Usa el arma correcta
+            <div class="tip-content">Escopeta para enemigos pequeños, lanzacohetes para grupos.</div>
+            <img class="tip-img" src="shotgun.png">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 3: Escucha sonidos enemigos
+            <div class="tip-content">Indican ubicación y tipo de amenaza.</div>
+            <img class="tip-img" src="skulls.png">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 4: Busca secretos
+            <div class="tip-content">Muchos niveles esconden salud, munición y mejoras.</div>
+            <img class="tip-img" src="secret.png">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 5: Mantén el control de la arena
+            <div class="tip-content">Domina rutas de escape y zonas seguras.</div>
+            <img class="tip-img" src="e1m1.png">
+        </div>
+    </div>
+</section>
+
+<!-- CARRERAS -->
+<section id="carreras">
+    <h2>Carreras – SONIC DRIFT</h2>
+    <div class="game-card">
+        <img src="Sonic_Drift_29.webp" class="game-image" onclick="playSound('0A4H.wav')">
+
+        <div class="tip" onclick="toggleTip(this)">Tip 1: Domina derrapes
+            <div class="tip-content">Los giros cerrados requieren práctica precisa.</div>
+            <img class="tip-img" src="derrape.png">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 2: Elige bien piloto
+            <div class="tip-content">Sonic = velocidad, Tails = control.</div>
+            <img class="tip-img" src="sawnik.png">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 3: Usa ítems en zonas clave
+            <div class="tip-content">Utilízalos cuando puedas ganar distancia máxima.</div>
+            <img class="tip-img" src="chaos.png">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 4: Aprende los circuitos
+            <div class="tip-content">Conocer la pista es mitad de la carrera ganada.</div>
+            <img class="tip-img" src="hill top.png">
+        </div>
+
+        <div class="tip" onclick="toggleTip(this)">Tip 5: Evita colisiones
+            <div class="tip-content">Perder velocidad compromete toda la vuelta.</div>
+            <img class="tip-img" src="waiiittt.png">
+        </div>
+    </div>
+</section>
+
+<!-- PLATAFORMEROS -->
+<section id="plataformas">
+    <h2>Plataformeros – Super Mario Brothers</h2>
+    <div class="game-card">
+        <img src="5e5keuzvu2e71.webp" class="game-image" onclick="playSound('+.wav')">
+
+      <div class="tip" onclick="toggleTip(this)">Tip 1: Corre antes de saltar
+<div class="tip-content">En Mario, una carrera corta aumenta la distancia de salto y permite alcanzar plataformas lejanas.</div>
+<img class="tip-img" src="jumping mario.png">
+</div>
+
+<div class="tip" onclick="toggleTip(this)">Tip 2: Usa el impulso de rebote
+<div class="tip-content">Saltar sobre enemigos no solo te da ventaja, también puede impulsarte para llegar más alto.</div>
+<img class="tip-img" src="springs.png">
+</div>
+
+<div class="tip" onclick="toggleTip(this)">Tip 3: Golpea todos los bloques "?"
+<div class="tip-content">Muchos contienen monedas, power-ups o incluso vidas ocultas.</div>
+<img class="tip-img" src="blocks.png">
+</div>
+
+<div class="tip" onclick="toggleTip(this)">Tip 4: Guarda los power-ups
+<div class="tip-content">El Fire Flower y el Super Leaf facilitan niveles difíciles. Evita perderlos jugando con cuidado.</div>
+<img class="tip-img" src="flower.png">
+</div>
+
+<div class="tip" onclick="toggleTip(this)">Tip 5: Explora tuberías ocultas
+<div class="tip-content">Muchos niveles de Mario tienen rutas secretas, atajos o áreas de monedas dentro de tuberías.</div>
+<img class="tip-img" src="hidden wrap zone.png">
+</div>
+</section>
+<!-- TERROR -->
+<section id="terror">
+<h2>Terror – SILENT HILL</h2>
+<div class="game-card">
+<img src="sh.webp" class="game-image" onclick="playSound('shradio1.mp3')">
+
+<div class="tip" onclick="toggleTip(this)">Tip 1: Escucha la radio
+<div class="tip-content">La estática de la radio indica enemigos cercanos. Úsala como tu principal alerta.</div>
+<img class="tip-img" src="car.png">
+</div>
+
+
+<div class="tip" onclick="toggleTip(this)">Tip 2: Conserva la munición
+<div class="tip-content">En Silent Hill la munición es escasa. Evita disparar si puedes huir.</div>
+<img class="tip-img" src="rifle.jpg">
+</div>
+
+
+<div class="tip" onclick="toggleTip(this)">Tip 3: Explora cada rincón
+<div class="tip-content">Muchas llaves y objetos esenciales están escondidos en zonas poco visibles.</div>
+<img class="tip-img" src="school.jpg">
+</div>
+
+
+<div class="tip" onclick="toggleTip(this)">Tip 4: Observa pistas visuales
+<div class="tip-content">El entorno te da pistas sobre acertijos y rutas.</div>
+<img class="tip-img" src="puzzle.jpg">
+</div>
+
+
+<div class="tip" onclick="toggleTip(this)">Tip 5: Mantén la calma
+<div class="tip-content">Silent Hill juega con tensión psicológica. Avanza despacio y analiza tu entorno.</div>
+<img class="tip-img" src="sewers.png">
+</div>
+</div>
+
+<footer>
+    © 2025 Joemama Ent.– Todos los derechos reservados 
+</footer>
+
+<script>
+function playSound(file) {
+    const audio = new Audio(file);
+    audio.play();
+}
+
+function toggleTip(element) {
+    const content = element.querySelector('.tip-content');
+    const img = element.querySelector('.tip-img');
+
+    const isOpen = content.style.display === 'block';
+
+    content.style.display = isOpen ? 'none' : 'block';
+    img.style.display = isOpen ? 'none' : 'block';
+}
+</script>
+<script>
+function playSound(file){ new Audio(file).play(); }
+function toggleTip(el){
+ const c = el.querySelector('.tip-content');
+ const i = el.querySelector('.tip-img');
+ const o = c.style.display === 'block';
+ c.style.display = o ? 'none' : 'block';
+ i.style.display = o ? 'none' : 'block';
+}
+// MENÚ DE INICIO
+const startMenu = document.getElementById("startMenu");
+const startBtn = document.getElementById("startBtn");
+startBtn.onclick = () => {
+ startMenu.style.display = "none";
+ document.getElementById("bgMusic").play();
+};
+</script>
+
+<audio id="bgMusic" src="1-51. Palmtree Panic ''P'' Mix (Beta).mp3" loop autoplay></audio>
+<script>
+const music = document.getElementById("bgMusic");
+music.volume = 0.30;
+document.addEventListener("click",()=>{if(music.paused) music.play();},{once:true});
+</script>
+</body>
+</html>
