@@ -125,7 +125,7 @@
 </section>
 <!-- MENU DE INICIO -->
 <div id="startMenu">
-   <h1>Bienvenido a la Guía de Videojuegos</h1>
+   <h1>Bienvenido a GamerZone!</h1>
    <button id="startBtn">INICIAR</button>
 </div>
 <nav>
@@ -371,7 +371,36 @@
 <img class="tip-img" src="sewers.png">
 </div>
 </div>
+<audio id="bgMusic" src="1-51. Palmtree Panic ''P'' Mix (Beta).mp3" loop autoplay></audio>
+<script>
+const music = document.getElementById("bgMusic");
+music.volume = 0.60;
+document.addEventListener("click",()=>{if(music.paused) music.play();},{once:true});
+</script>
+<section id="musicSelector" class="music-section">
+        <h2>Elije La Música de Tu Preferencia</h2>
+        <select id="musicSelect" onchange="changeMusic()">
+            <option value="1-51. Palmtree Panic ''P'' Mix (Beta).mp3">BGM 1 - Jurassic Jungle</option>
+         <option value="18 - Gallery (Exclusive music for remaster).mp3">BGM 2 - Gallery Theme</option>
+            <option value="04 Stage 1.mp3">BGM 3 - Persian Prison</option>
+            <option value="1-32. Metallic Madness ''G'' Mix.mp3">BGM 4 - United Utopia</option>
+            <option value="1-42. Little Planet.mp3">BGM 5 - A Little Planet</option>
+            <option value="US Past Themes - 1 Palmtree Panic 'P Mix' (US).mp3">BGM 6 - Primitive Plain</option>
+            <option value="2-45. Map 1 (Yoshi's Island).mp3">BGM 7 - Yoshi's Island</option>
+            <option value="10. Mod List.mp3">BGM 8 - Psychedelic Lullaby</option>
+        </select>
+    </section>
 
+    <audio id="bgMusic" src="18 - Gallery (Exclusive music for remaster).mp3" autoplay loop volume="0.80"></audio>
+
+    <script>
+        function changeMusic() {
+            const audio = document.getElementById('bgMusic');
+            const selected = document.getElementById('musicSelect').value;
+            audio.src = selected;
+            audio.play();
+        }
+    </script>
 <footer>
     © 2025 Joemama Ent.– Todos los derechos reservados 
 </footer>
@@ -408,13 +437,6 @@ startBtn.onclick = () => {
  startMenu.style.display = "none";
  document.getElementById("bgMusic").play();
 };
-</script>
-
-<audio id="bgMusic" src="1-51. Palmtree Panic ''P'' Mix (Beta).mp3" loop autoplay></audio>
-<script>
-const music = document.getElementById("bgMusic");
-music.volume = 0.30;
-document.addEventListener("click",()=>{if(music.paused) music.play();},{once:true});
 </script>
 </body>
 </html>
